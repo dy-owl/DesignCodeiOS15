@@ -23,21 +23,27 @@ struct ContentView: View {
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .textCase(.uppercase)
+                .foregroundColor(.secondary)
             Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
                 .font(.footnote)
                 .fontWeight(.regular)
                 .lineLimit(2)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundColor(.secondary)
         }
         .padding(.all, 20.0)
+        .padding(.vertical, 20)
         .frame(height: 350.0)
-        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("Background")/*@END_MENU_TOKEN@*/)
+        .background(Color("Background"))
         .cornerRadius(30.0)
-        .shadow(radius: 20)
+        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
+        .padding(.horizontal, 20)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.light)
     }
 }
